@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Controls as QQC2
+import QtQuick.Dialogs as QtDialogs
 import org.kde.kirigami as Kirigami
 import org.kde.kcmutils as KCM
 
@@ -32,7 +33,11 @@ KCM.SimpleKCM {
         return options;
     }
 
-    readonly property var fontOptions: [i18n("System font")].concat(Qt.fontFamilies())
+    QtDialogs.FontDialog {
+        id: fontDialog
+        title: i18n("Choose a font")
+        onAccepted: page.cfg_fontFamily = selectedFont.family
+    }
 
     Kirigami.FormLayout {
         QQC2.ComboBox {
@@ -64,14 +69,33 @@ KCM.SimpleKCM {
 
         Item { Kirigami.FormData.isSection: true }
 
-        QQC2.ComboBox {
+        // A button plus the system font dialog: listing every installed font
+        // in a ComboBox makes the page take seconds to open.
+        Row {
             Kirigami.FormData.label: i18n("Font:")
-            model: page.fontOptions
-            Component.onCompleted: {
-                const i = page.cfg_fontFamily ? find(page.cfg_fontFamily) : 0;
-                currentIndex = i >= 0 ? i : 0;
+            spacing: Kirigami.Units.smallSpacing
+
+            QQC2.Button {
+                text: page.cfg_fontFamily || i18n("System font (%1)", Kirigami.Theme.defaultFont.family)
+                icon.name: "preferences-desktop-font"
+                onClicked: {
+                    fontDialog.selectedFont = Qt.font({
+                        family: page.cfg_fontFamily || Kirigami.Theme.defaultFont.family,
+                        pointSize: Kirigami.Theme.defaultFont.pointSize
+                    });
+                    fontDialog.open();
+                }
             }
-            onActivated: page.cfg_fontFamily = currentIndex === 0 ? "" : currentText
+
+            QQC2.Button {
+                visible: page.cfg_fontFamily !== ""
+                icon.name: "edit-undo"
+                text: i18n("Use system font")
+                display: QQC2.AbstractButton.IconOnly
+                QQC2.ToolTip.text: text
+                QQC2.ToolTip.visible: hovered
+                onClicked: page.cfg_fontFamily = ""
+            }
         }
 
         QQC2.SpinBox {
