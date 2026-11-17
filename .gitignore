@@ -10,3 +10,5 @@ __pycache__/
 .netlify/
 
 /src/web-version.json
+kde-plasma/package/contents/data/
+*.plasmoid

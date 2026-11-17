@@ -1,0 +1,14 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Category": "Date and Time",
+        "Description": "Tells the time with a quote from literature for every minute of the day",
+        "Icon": "view-calendar-time-spent",
+        "Id": "io.github.literatureclock.plasma",
+        "License": "MIT",
+        "Name": "Literature Clock",
+        "Version": "0.1.0",
+        "Website": "https://github.com/cdmoro/literature-clock"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0"
+}

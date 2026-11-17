@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
+  <kcfgfile name=""/>
+  <group name="General">
+    <entry name="locale" type="String">
+      <label>Quote language. Empty means follow the system language.</label>
+      <default></default>
+    </entry>
+    <entry name="sfwOnly" type="Bool">
+      <label>Skip quotes marked as not safe for work</label>
+      <default>false</default>
+    </entry>
+    <entry name="showAttribution" type="Bool">
+      <label>Show author and title</label>
+      <default>true</default>
+    </entry>
+    <entry name="highlightTime" type="Bool">
+      <label>Colour the time phrase with the accent colour</label>
+      <default>true</default>
+    </entry>
+    <entry name="fontFamily" type="String">
+      <label>Quote font. Empty means the default serif font.</label>
+      <default></default>
+    </entry>
+    <entry name="maxFontSize" type="Int">
+      <label>Largest font size in pixels; text shrinks to fit the widget</label>
+      <default>40</default>
+      <min>8</min>
+      <max>200</max>
+    </entry>
+  </group>
+</kcfg>
