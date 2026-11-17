@@ -10,7 +10,7 @@ Item {
     property string minuteKey: ""
     signal nextRequested()
 
-    readonly property string fontFamily: Plasmoid.configuration.fontFamily || "serif"
+    readonly property string fontFamily: Plasmoid.configuration.fontFamily || Kirigami.Theme.defaultFont.family
     readonly property color textColor: Kirigami.Theme.textColor
     readonly property color accentColor: Plasmoid.configuration.highlightTime
         ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor

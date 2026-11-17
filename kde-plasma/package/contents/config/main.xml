@@ -21,7 +21,7 @@
       <default>true</default>
     </entry>
     <entry name="fontFamily" type="String">
-      <label>Quote font. Empty means the default serif font.</label>
+      <label>Quote font. Empty means the system font.</label>
       <default></default>
     </entry>
     <entry name="maxFontSize" type="Int">

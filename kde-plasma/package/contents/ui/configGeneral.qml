@@ -32,7 +32,7 @@ KCM.SimpleKCM {
         return options;
     }
 
-    readonly property var fontOptions: [i18n("Default serif")].concat(Qt.fontFamilies())
+    readonly property var fontOptions: [i18n("System font")].concat(Qt.fontFamilies())
 
     Kirigami.FormLayout {
         QQC2.ComboBox {

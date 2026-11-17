@@ -4,7 +4,7 @@ A Plasma 6 widget that tells the time with a quote from literature for every min
 
 - On the desktop it shows the current quote, with the time phrase highlighted. Click it for another quote for the same minute.
 - In a panel it shows an icon; click it to open the quote in a popup.
-- Settings: quote language (14 languages, or follow the system language), skip quotes marked not safe for work, show or hide author and title, accent-colour highlight, font, and largest font size. The text shrinks to fit the widget.
+- Settings: quote language (14 languages, or follow the system language), skip quotes marked not safe for work, show or hide author and title, accent-colour highlight, font (defaults to the system font), and largest font size. The text shrinks to fit the widget.
 - If a minute has no quote, the widget shows the plain time.
 
 ## Build and install
